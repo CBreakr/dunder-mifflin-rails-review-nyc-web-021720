@@ -1,0 +1,15 @@
+<h1>Dogs</h1>
+
+<ul>
+<% @dogs.each do |dog| %>
+    <li>
+    <%= link_to dog.name, dog_path(dog) %>
+    </li>
+<% end %>
+</ul>
+
+<% if @sorted then %>
+    <%= button_to "Standard View", dogs_path, method: :get %>
+<% else %>
+    <%= button_to "Sorted View", sorted_path, method: :get %>
+<% end %>

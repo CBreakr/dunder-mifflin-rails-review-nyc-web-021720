@@ -1,0 +1,15 @@
+<h1><%= @employee.first_name + " " + @employee.last_name %></h1>
+
+<p>AKA: <%= @employee.alias %></p>
+<p>Office: <%= @employee.office %></p>
+
+<br />
+<img src="<%=@employee.img_url%>" />
+
+<br />
+<% if @employee.dog then %>
+    <%= link_to @employee.dog.name, dog_path(@employee.dog) %>
+<% end %>
+
+<br />
+<%= link_to "Edit", edit_employee_path(@employee) %>

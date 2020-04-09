@@ -1,0 +1,42 @@
+<h1>Employee Form <%= employee.first_name %> <%= employee.last_name %> </h1>
+
+<%= form_for employee do |fb| %>
+
+    <p>
+        <%= fb.label :first_name %>
+        <%= fb.text_field :first_name %>
+    </p>
+
+    <p>
+        <%= fb.label :last_name %>
+        <%= fb.text_field :last_name %>
+    </p>
+
+    <p>
+        <%= fb.label :alias %>
+        <%= fb.text_field :alias %>
+    </p>
+
+    <p>
+        <%= fb.label :title %>
+        <%= fb.text_field :title %>
+    </p>
+
+    <p>
+        <%= fb.label :office %>
+        <%= fb.text_field :office %>
+    </p>
+
+    <p>
+        <%= fb.label :img_url %>
+        <%= fb.text_field :img_url %>
+    </p>
+
+    <p>
+        <%= fb.label :dog_id %>
+        <%= fb.collection_select :dog_id, Dog.all, :id, :name %>
+    </p>
+
+    <br />
+    <%= fb.submit %>
+<% end %>
